@@ -1,0 +1,12 @@
+car_init_theta: 3.0860480264806522
+car_init_x: 2.317063059930818
+car_init_y: -1.6246897714861352
+free_thresh: 0.196
+image: porto.png
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -12.824999
+- -12.824999
+- 0
+resolution: 0.05000000074505806

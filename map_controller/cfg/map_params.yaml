@@ -1,0 +1,10 @@
+# Minimum and maximum lookahead distance in meters
+t_clip_min: 0.3 
+t_clip_max: 5
+
+# Tuning parameters for lookahead distance as m*target_speed + q
+m_map: 0.3
+q_map: 0.15
+
+# Name of lookup table
+LU_table: "SIM_linear"

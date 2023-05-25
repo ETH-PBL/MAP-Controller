@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- rviz bool -->
+  <arg name="rviz" default="True"/>
+  <!-- base_maps_dir lets you choose if you want to use maps that are only available for sim because of missing .pbstream stack_master for real car maps f1tenth_simulator for sim only-->
+  <arg name="base_map_dir" default="$(find f1tenth_simulator)"/>
+
+  <!-- Launch a map from the maps folder-->
+  <arg name="map_name" default="f"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg base_map_dir)/maps/$(arg map_name)/$(arg map_name).yaml"/>
+
+  <!-- Launch the racecar model -->
+  <include file="$(find f1tenth_simulator)/launch/racecar_model.launch"/>
+
+  <!-- Launch the mux node with the parameters from params.yaml -->
+  <node pkg="f1tenth_simulator" name="mux_controller" type="mux" output="screen">
+    <rosparam command="load" file="$(find f1tenth_simulator)/params.yaml"/>
+  </node>
+
+  <!-- Launch the behavior controller node with the parameters from params.yaml -->
+  <node pkg="f1tenth_simulator" name="behavior_controller" type="behavior_controller" output="screen">
+    <rosparam command="load" file="$(find f1tenth_simulator)/params.yaml"/>
+  </node>
+
+  <!-- rosbag with global waypoints -->
+  <node pkg="rosbag" type="play" name="glb_player" output="screen" args="-r 5 -q $(arg base_map_dir)/maps/$(arg map_name)/global_wpnts.bag">
+  </node>
+
+  <!-- run PP controller -->
+  <node pkg="map_controller" name="control_node" type="PP_controller.py" output="screen">
+      <rosparam command="load" file="$(find map_controller)/cfg/pp_params.yaml"/>
+  </node>
+
+  <!-- run time and error tracker -->
+  <node pkg="map_controller" name="tracker_node" type="time_error_tracker.py" output="screen"/>
+
+  <!-- Begin the simulator with the parameters from params.yaml -->
+  <node pkg="f1tenth_simulator" name="f1tenth_simulator" type="simulator" output="screen">
+    <rosparam command="load" file="$(find f1tenth_simulator)/params.yaml"/>
+    <rosparam command="load" file="$(arg base_map_dir)/maps/$(arg map_name)/$(arg map_name).yaml"/>
+  </node>
+
+  <!-- Launch RVIZ -->
+  <group if="$(arg rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find f1tenth_simulator)/launch/simulator.rviz" output="screen"/>
+  </group>
+</launch>

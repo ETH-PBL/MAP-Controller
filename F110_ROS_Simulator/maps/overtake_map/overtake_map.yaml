@@ -1,0 +1,12 @@
+car_init_theta: 0.29562876957950457
+car_init_x: 0.2967675692110142
+car_init_y: 0.12408246667861632
+free_thresh: 0.196
+image: overtake_map.png
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -5.628242874145508
+- -4.880340576171875
+- 0
+resolution: 0.05000000074505806

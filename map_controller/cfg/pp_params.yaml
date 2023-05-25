@@ -1,0 +1,7 @@
+# Minimum and maximum lookahead distance in meters
+t_clip_min: 0.5
+t_clip_max: 5
+
+# Tuning parameters for lookahead distance as m*target_speed + q
+m_pp: 0.1
+q_pp: 0.6
