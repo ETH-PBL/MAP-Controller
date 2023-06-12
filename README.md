@@ -133,7 +133,7 @@ The relative paper has been published at ICRA2023, see the [pre-print](https://a
 ```
   @conference{becker2023MAP,
   title={Model- and Acceleration-based Pursuit Controller for High-Performance Autonomous Racing}, 
-  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)}
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
   author={Jonathan Becker and Nadine Imholz and Luca Schwarzenbach and Edoardo Ghignone and Nicolas Baumann and Michele Magno},
   year = {2023},  
   pages = {In Press}
