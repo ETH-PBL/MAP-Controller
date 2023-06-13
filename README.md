@@ -4,6 +4,10 @@ This project presents a novel trajectory tracking algorithm for a high-speed aut
 
 This package provides a script for the lookup table generation and two controllers: the MAP controller and a Pure Pursuit controller. Additionally, it includes a simulator where you can test these controllers. With the simulator, you can evaluate the performance of the MAP controller with a linear tyre model (as the simulator models a linear tyre behaviour) and the Pure Pursuit controller and compare their results.
 
+Click on the image for a brief video description:
+
+[![Alternate Text](https://img.youtube.com/vi/lE_Dk1iJHHg/hqdefault.jpg)](https://www.youtube.com/watch?v=lE_Dk1iJHHg)
+
 ## Getting Started
 
 ### Prerequisits
