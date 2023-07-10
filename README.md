@@ -135,11 +135,14 @@ The controller publishes the calculated steering and speed commands as an `Acker
 The relative paper has been published at ICRA2023, see the [pre-print](https://arxiv.org/pdf/2209.04346.pdf). If you find our work useful in your research, please consider citing:
 
 ```
-  @conference{becker2023MAP,
-  title={Model- and Acceleration-based Pursuit Controller for High-Performance Autonomous Racing}, 
-  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
-  author={Jonathan Becker and Nadine Imholz and Luca Schwarzenbach and Edoardo Ghignone and Nicolas Baumann and Michele Magno},
-  year = {2023},  
-  pages = {In Press}
+@inproceedings{Becker_2023,
+	doi = {10.1109/icra48891.2023.10161472},
+	url = {https://doi.org/10.1109%2Ficra48891.2023.10161472},
+	year = 2023,
+	month = {may},
+	publisher = {{IEEE}}, 
+	author = {Jonathan Becker and Nadine Imholz and Luca Schwarzenbach and Edoardo Ghignone and Nicolas Baumann and Michele Magno},
+	title = {Model- and Acceleration-based Pursuit Controller for High-Performance Autonomous Racing},
+	booktitle = {2023 {IEEE} International Conference on Robotics and Automation ({ICRA})}
 }
 ```
